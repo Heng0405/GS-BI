@@ -1,15 +1,16 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
+import AccountList from '../components/account/accountBox.vue';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: HelloWorld
+      path: '/accountList',
+      name: 'AccountList',
+      component: AccountList
     }
   ]
 });
+export default router;
