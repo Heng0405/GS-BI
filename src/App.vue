@@ -20,8 +20,21 @@
 
 <script>
   import header from './components/header/header.vue';
-
+  const ERR_OK = 0;
   export default {
+    data(){
+      return{
+        account:{}
+      };
+    },
+    created(){
+      this.$http.get('api/account').then((response) => {
+        response = response.body;
+        if (response.errno === ERR_OK) {
+          this.account = response.data;
+        }
+      });
+    },
     components: {
       'v-header': header
     }
